@@ -1,0 +1,12 @@
+title: Welcome to MRMCD Vortrag!
+---
+body: This is the best MRMCD Vortrag ever
+---
+slide:
+
+   <div id="ahoi2" class="step slide" data-x="-1000" data-y="-4500" data-autoplay="10">
+        <q>Ahoi, ihr Seemenschen!<br/>
+        Die MRMCDs haben seit 20 Jahren ihr Seepferdchen und dieses Jahr hissen wir die Flagge mit dem Motto <b>„Land in Sicht?“</b>.
+        Die digitale Welt ist ein stürmisches Meer voller unbekannter Gefahren...</q>
+    </div>
+
