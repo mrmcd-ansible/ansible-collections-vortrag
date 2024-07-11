@@ -1,4 +1,4 @@
-title: Welcome to MRMCD Vortrag!
+title: Ansible Collections | MRMCD 2024 Vortrag
 ---
 body: This is the best MRMCD Vortrag ever
 ---
@@ -15,23 +15,8 @@ autoplay: 20
 ----
 content:
 
-**Ahoi, ihr Seemenschen!**<br/>
-Die MRMCDs haben seit 20 Jahren ihr Seepferdchen und dieses Jahr hissen wir die Flagge mit dem Motto **„Land in Sicht?“**.
-Die digitale Welt ist ein stürmisches Meer voller unbekannter Gefahren...
-#### step ####
-datax: 0
-----
-datay: 0
-----
-id: test
-----
-datascale: 4
-----
-content:
-
-Hier könnte ein
-<h1>MRMCD Vortrag</h1>
-entstehen...
+<center><b>Ansible Collections</b><br/>
+<img src="./img/animated_ansible.svg" width=50%></center>
 #### slides ####
 content:
 
