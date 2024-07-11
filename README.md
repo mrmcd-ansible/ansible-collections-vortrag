@@ -3,15 +3,33 @@
 
 Von Loppermann und L3D
 
-## Usage:
-+ Git Repository Clonen
-+ Lokalen Webserver Starten:
+## Benutzung:
+TL;DR: Es wird der Static Side Generator [Lektor](https://getlektor.com) verwendet...
+
+1. Git Repository Clonen
+2. Python3 Venv Einrichten
 ```bash
-python3 -m http.server
+sudo apt install python3 python3-venv
+python3 -m venv lektor
+```
+3. Venv Aktivieren
+```bash
+source lektor/bin/activate
+```
+4. Lektor Installieren
+```bash
+pip3 install lektor --upgrade
+```
+
+5. Lektor Starten
+```bash
+lektor server
+```
 ```
 + Im Browser öffnen
 ```
-http://localhost:8000/
+http://localhost:5000/
+http://localhost:5000/admin/
 ```
 
 ## DOCS:
