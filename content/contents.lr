@@ -4,9 +4,31 @@ body: This is the best MRMCD Vortrag ever
 ---
 slide:
 
-#### slides ####
+#### step_slide ####
+datax: -3000
+----
+datay: -1000
+----
+id: ahoi
+----
+autoplay: 20
+----
 content:
 
-    <div class="step slide" data-x="-3000" data-y="-1500">
-        <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
-    </div>
+**Ahoi, ihr Seemenschen!**<br/>
+Die MRMCDs haben seit 20 Jahren ihr Seepferdchen und dieses Jahr hissen wir die Flagge mit dem Motto **„Land in Sicht?“**.
+Die digitale Welt ist ein stürmisches Meer voller unbekannter Gefahren...
+#### step ####
+datax: 0
+----
+datay: 0
+----
+id: test
+----
+datascale: 4
+----
+content:
+
+<span class="try">then you should try</span>
+<h1>impress.js<sup>*</sup></h1>
+<span class="footnote"><sup>*</sup> no rhyme intended</span>
