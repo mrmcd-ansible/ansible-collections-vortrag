@@ -25,8 +25,7 @@ pip3 install lektor --upgrade
 ```bash
 lektor server
 ```
-```
-+ Im Browser öffnen
+6. Im Browser öffnen
 ```
 http://localhost:5000/
 http://localhost:5000/admin/
