@@ -17,8 +17,54 @@ content:
 
 <center><b>Ansible Collections</b><br/>
 <img src="./img/animated_ansible.svg" width=50%></center>
-#### slides ####
+#### step_slide ####
+datax: -2000
+----
+datay: -1000
+----
+id: Inhaltsverzeichnis
+----
+autoplay: 0
+----
+content: 
+#### step_slide ####
+datax: -1000
+----
+datay: -1000
+----
+id: Ansible
+----
+autoplay: 10
+----
 content:
 
-<div id="overview" class="step" data-x="3000" data-y="1500" data-z="0" data-scale="10">
-</div>
+Ansible ist ein Open-Source-Automatisierungstool.
+Es vereint Softwareverteilung, die Ausführung von Ad-hoc-Befehlen
+und das Management von Software Konfigurationen. Dadurch
+können wiederkehrende Aufgaben, Konfigurationen und die
+Verwaltung von Systemen auf einer Vielzahl von Servern oder
+Netzwerkgeräten automatisiert werden.
+#### step_slide ####
+datax: 0
+----
+datay: -1000
+----
+id: Collactions
+----
+autoplay: 10
+----
+content:
+
+Collections bieten die Möglichkeit dezentral Rollen, Module und
+Plugins zu schreiben und diese in anderen Projekten wieder
+einzubinden
+#### step_slide ####
+datax: 0
+----
+datay: 0
+----
+id: Collcations warum?
+----
+autoplay: 10
+----
+content: - Um mehr Struktur und eine bessere Teilhabemöglichkeit der Community im Ansible Projekt zu gewährleisten
