@@ -174,7 +174,7 @@
         maxScale: 3,
         minScale: 0,
 
-        perspective: 1000,
+        perspective: 800,
 
         transitionDuration: 1000
     };

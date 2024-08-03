@@ -26,7 +26,7 @@ id: Inhaltsverzeichnis
 ----
 autoplay: 0
 ----
-content: 
+content: Hallo zusammen
 #### step_slide ####
 datax: -1000
 ----
@@ -38,12 +38,10 @@ autoplay: 10
 ----
 content:
 
-Ansible ist ein Open-Source-Automatisierungstool.
+Ansible ist ein Open-Source-Automatisierungstool.<br/>
+
 Es vereint Softwareverteilung, die Ausführung von Ad-hoc-Befehlen
-und das Management von Software Konfigurationen. Dadurch
-können wiederkehrende Aufgaben, Konfigurationen und die
-Verwaltung von Systemen auf einer Vielzahl von Servern oder
-Netzwerkgeräten automatisiert werden.
+und das Management von Software Konfigurationen.
 #### step_slide ####
 datax: 0
 ----
@@ -63,8 +61,16 @@ datax: 0
 ----
 datay: 0
 ----
-id: Collcations warum?
+id: Collcations_warum
 ----
 autoplay: 10
 ----
 content: - Um mehr Struktur und eine bessere Teilhabemöglichkeit der Community im Ansible Projekt zu gewährleisten
+#### slides ####
+content:
+
+   <div id="its" class="step" data-x="200" data-y="2000" data-rotate="90" data-scale="3">
+        <p>Eine <strong>Ansible Collection</strong> <br/>
+        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
+        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+    </div>
