@@ -5,7 +5,7 @@
 {%     if slde._flowblock == 'slides' %}
 {{       slde.content }}
 {%     elif slde._flowblock == 'step_slide' %}
-<div     id="{{ slde.id }}" class="step slide" data-x="{{ slde.datax }}" data-y="{{ slde.datay}}" data-autoplay="{{ slde.autoplay }}"><q>{{ slde.content }}</q></div>
+<div     id="{{ slde.id }}" class="step slide" data-x="{{ slde.datax }}" data-y="{{ slde.datay}}" data-autoplay="{{ slde.autoplay }}" data-scale="5"><q>{{ slde.content }}</q></div>
 {%     elif slde._flowblock == 'step' %}
 <div     id="{{ slde.id }}" class="step" data-x="{{ slde.datax }}" data-y="{{ slde.datay }}" data-scale="{{ slde.datascale }}">{{ slde.content }}</div>
 {%     else %}

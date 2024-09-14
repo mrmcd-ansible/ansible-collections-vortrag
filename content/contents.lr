@@ -5,36 +5,36 @@ body: This is the best MRMCD Vortrag ever
 slide:
 
 #### step_slide ####
-datax: -3000
+datax: -15000
 ----
-datay: -1000
+datay: -5000
 ----
 id: ahoi
 ----
-autoplay: 20
+autoplay: 300
 ----
 content:
 
 <center><b>Ansible Collections</b><br/>
 <img src="./img/animated_ansible.svg" width=50%></center>
 #### step_slide ####
-datax: -2000
+datax: -10000
 ----
-datay: -1000
+datay: -5000
 ----
-id: Inhaltsverzeichnis
+id: tldr
 ----
-autoplay: 0
+autoplay: 300
 ----
-content: Hallo zusammen
+content: In diesem Vortrag wollen wir euch ein Einstieg in Ansible Collections geben. Was sind sie, wie nutzt man sie und wie erstellt ihr welche.
 #### step_slide ####
-datax: -1000
+datax: -5000
 ----
-datay: -1000
+datay: -5000
 ----
-id: Ansible
+id: ansible-overview
 ----
-autoplay: 10
+autoplay: 300
 ----
 content:
 
@@ -45,32 +45,101 @@ und das Management von Software Konfigurationen.
 #### step_slide ####
 datax: 0
 ----
-datay: -1000
+datay: -5000
 ----
-id: Collactions
+id: collections-overview
 ----
-autoplay: 10
+autoplay: 300
 ----
 content:
 
-Collections bieten die Möglichkeit dezentral Rollen, Module und
+Ansible Collections bieten die Möglichkeit, dezentral Rollen, Module und
 Plugins zu schreiben und diese in anderen Projekten wieder
-einzubinden
+einzubinden.
 #### step_slide ####
-datax: 0
+datax: 5000
 ----
-datay: 0
+datay: -5000
 ----
-id: Collcations_warum
+id: ansible-210
 ----
-autoplay: 10
+autoplay: 300
 ----
-content: - Um mehr Struktur und eine bessere Teilhabemöglichkeit der Community im Ansible Projekt zu gewährleisten
+content:
+
+2020 wurden mit <a>Ansible 2.10</a> Fully Qualified Collection Names (FQCN) eingeführt.<br/>
+Dies ermöglicht es, Ansible Module, Filter, Plugins und Rollen in seine Projekte zu integrieren und mit der Community zu teilen.
+#### step_slide ####
+datax: 10000
+----
+datay: -5000
+----
+id: galaxy
+----
+autoplay: 300
+----
+content: Diese Ansible Collections werden meist auf <a>galaxy.ansible.com</a> geteilt.
 #### slides ####
 content:
 
-   <div id="its" class="step" data-x="200" data-y="2000" data-rotate="90" data-scale="3">
-        <p>Eine <strong>Ansible Collection</strong> <br/>
-        inspired by the idea behind <a href="http://prezi.com">prezi.com</a> <br/>
-        and based on the <strong>power of CSS3 transforms and transitions</strong> in modern browsers.</p>
+   <div id="collection-l3d-git" class="step" data-x="10000" data-y="0" data-rotate="90" data-scale="3">
+        <p>Anslyse der <strong>Ansible Collection</strong> <br/>
+       <a href="https://galaxy.ansible.com/ui/repo/published/l3d/git/">l3d.git</a> <i>(galaxy.ansible.com/l3d/git)</i><br/>
+        und wie Sie aufgebaut ist.</p>
     </div>
+#### slides ####
+content:
+
+<div id="collection-tree" class="step" data-x="0" data-y="10000" data-rotate="90" data-scale="3">
+<a>Aufbau der Collection:</a>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+  </style>
+  <text x="0" y="10">
+    <tspan x="50" dy="0">.</tspan>
+    <tspan x="50" dy="1.2em">├── changelog</tspan>
+    <tspan x="50" dy="1.2em">├── CHANGELOG.md</tspan>
+    <tspan x="50" dy="1.2em">├── CHANGELOG.rst</tspan>
+    <tspan x="50" dy="1.2em" fill="red">├── galaxy.yml</tspan>
+    <tspan x="50" dy="1.2em">├── LICENSE</tspan>
+    <tspan x="50" dy="1.2em">├── meta</tspan>
+    <tspan x="50" dy="1.2em">│   └── runtime.yml</tspan>
+    <tspan x="50" dy="1.2em">├── README.md</tspan>
+    <tspan x="50" dy="1.2em">├── requirements.txt</tspan>
+    <tspan x="50" dy="1.2em">└── roles</tspan>
+    <tspan x="80" dy="1.2em">├── forgeo_runner</tspan>
+    <tspan x="80" dy="1.2em">│   └── …</tspan>
+    <tspan x="80" dy="1.2em">└── gitea</tspan>
+    <tspan x="80" dy="1.2em">    └──…</tspan>
+  </text>
+</svg>
+
+</div>
+#### slides ####
+content:
+
+<div id="collection-galaxy" class="step" data-x="0" data-y="15000" data-rotate="90" data-scale="2">
+<a>galaxy.yml:</a>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+  </style>
+  <text x="0" y="20">
+    <tspan x="20" dy="0">namespace: l3d</tspan>
+    <tspan x="20" dy="2em">version: 1.1.6</tspan>
+    <tspan x="20" dy="2em">readme: README.md</tspan>
+    <tspan x="20" dy="2em">authors:</tspan>
+    <tspan x="30" dy="1.4em">  - L3D &lt;l3d@c3woc.de&gt;</tspan>
+    <tspan x="20" dy="2em">license:</tspan>
+    <tspan x="30" dy="1.4em">  - MIT</tspan>
+
+
+  </text>
+</svg>
+
+</div>

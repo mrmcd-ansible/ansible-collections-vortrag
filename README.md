@@ -18,7 +18,7 @@ source lektor/bin/activate
 ```
 4. Lektor Installieren
 ```bash
-pip3 install lektor --upgrade
+pip3 install --upgrade -r requirements.txt
 ```
 
 5. Lektor Starten
