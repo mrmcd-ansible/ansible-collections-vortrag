@@ -90,7 +90,7 @@ content:
 #### slides ####
 content:
 
-<div id="collection-tree" class="step" data-x="0" data-y="10000" data-rotate="90" data-scale="3">
+<div id="collection-tree-galaxy" class="step" data-x="7000" data-y="0" data-rotate="90" data-scale="3">
 <a>Aufbau der Collection:</a>
 <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <style>
@@ -121,9 +121,9 @@ content:
 #### slides ####
 content:
 
-<div id="collection-galaxy" class="step" data-x="0" data-y="15000" data-rotate="90" data-scale="2">
+<div id="collection-galaxy" class="step" data-x="7000" data-y="4000" data-rotate="90" data-scale="2">
 <a>galaxy.yml:</a>
-<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
   <style>
     text {
       font: 13px monospace;
@@ -137,9 +137,188 @@ content:
     <tspan x="30" dy="1.4em">  - L3D &lt;l3d@c3woc.de&gt;</tspan>
     <tspan x="20" dy="2em">license:</tspan>
     <tspan x="30" dy="1.4em">  - MIT</tspan>
-
-
+    <tspan x="20" dy="2em">tags:</tspan>
+    <tspan x="30" dy="1.4em">  - gitea</tspan>
+    <tspan x="30" dy="1.4em">  - linux</tspan>
+    <tspan x="20" dy="2em">dependencies:</tspan>
+    <tspan x="30" dy="1.4em">  "community.general": ">=9.4.0"</tspan>
+    <tspan x="20" dy="2em">repository: https://github.com/roles-ansible/ansible_collection_git.git</tspan>
+    <tspan x="20" dy="2em">homepage: https://ansible.l3d.space/#l3d.git</tspan>
   </text>
 </svg>
+
+</div>
+#### slides ####
+content:
+
+<div id="collection-tree-role" class="step" data-x="7000" data-y="0" data-rotate="90" data-scale="3">
+<a>Aufbau der Collection:</a>
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+  </style>
+  <text x="0" y="10">
+    <tspan x="50" dy="0">.</tspan>
+    <tspan x="50" dy="1.2em">├── changelog</tspan>
+    <tspan x="50" dy="1.2em">├── CHANGELOG.md</tspan>
+    <tspan x="50" dy="1.2em">├── CHANGELOG.rst</tspan>
+    <tspan x="50" dy="1.2em">├── galaxy.yml</tspan>
+    <tspan x="50" dy="1.2em">├── LICENSE</tspan>
+    <tspan x="50" dy="1.2em">├── meta</tspan>
+    <tspan x="50" dy="1.2em">│   └── runtime.yml</tspan>
+    <tspan x="50" dy="1.2em">├── README.md</tspan>
+    <tspan x="50" dy="1.2em">├── requirements.txt</tspan>
+    <tspan x="50" dy="1.2em"  fill="red">└── roles</tspan>
+    <tspan x="80" dy="1.2em">├── forgeo_runner</tspan>
+    <tspan x="80" dy="1.2em">│   └── …</tspan>
+    <tspan x="80" dy="1.2em"  fill="red">└── gitea</tspan>
+    <tspan x="80" dy="1.2em">    └──…</tspan>
+  </text>
+</svg>
+
+</div>
+#### slides ####
+content:
+
+<div id="collection-l3d-git-gitea" class="step" data-x="3000" data-y="0" data-rotate="90" data-scale="3">
+<a>l3d.git.gitea</a>
+<svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+  </style>
+  <text x="0" y="10">
+    <tspan x="50" dy="0">.</tspan>
+    <tspan x="50" dy="1.2em">├── defaults</tspan>
+    <tspan x="50" dy="1.2em">│   ├── forgejo.yml</tspan>
+    <tspan x="50" dy="1.2em">│   ├── gitea.yml</tspan>
+    <tspan x="50" dy="1.2em">│   └── main.yml</tspan>
+    <tspan x="50" dy="1.2em">├── files</tspan>
+    <tspan x="50" dy="1.2em">│   └── extra_links_footer.tmpl</tspan>
+    <tspan x="50" dy="1.2em">├── handlers</tspan>
+    <tspan x="50" dy="1.2em">│   └── main.yml</tspan>
+    <tspan x="50" dy="1.2em">├── LICENSE</tspan>
+    <tspan x="50" dy="1.2em">├── meta</tspan>
+    <tspan x="50" dy="1.2em">│   └── main.yml</tspan>
+    <tspan x="50" dy="1.2em">├── README.md</tspan>
+    <tspan x="50" dy="1.2em">├── requirements.yml</tspan>
+    <tspan x="50" dy="1.2em"  fill="red">├── tasks</tspan>
+    <tspan x="50" dy="1.2em">│   └── …</tspan>
+    <tspan x="50" dy="1.2em">├── templates</tspan>
+    <tspan x="50" dy="1.2em">│   ├── fail2ban</tspan>
+    <tspan x="50" dy="1.2em">│   │   ├── filter.conf.j2</tspan>
+    <tspan x="50" dy="1.2em">│   │   └── jail.conf.j2</tspan>
+    <tspan x="50" dy="1.2em">│   ├── gitea.ini.j2</tspan>
+    <tspan x="50" dy="1.2em">│   └── gitea.service.j2</tspan>
+    <tspan x="50" dy="1.2em">└── vars</tspan>
+    <tspan x="50" dy="1.2em">    ├── debian.yml</tspan>
+    <tspan x="50" dy="1.2em">    ├── fork_forgejo.yml</tspan>
+    <tspan x="50" dy="1.2em">    ├── fork_gitea.yml</tspan>
+    <tspan x="50" dy="1.2em">    ├── main.yml</tspan>
+    <tspan x="50" dy="1.2em">    ├── os_fallback_defaults.yml</tspan>
+    <tspan x="50" dy="1.2em">    ├── redhat.yml</tspan>
+    <tspan x="50" dy="1.2em">    └── suse.yml</tspan>
+  </text>
+</svg>
+
+
+
+</div>
+#### slides ####
+content:
+
+<div id="collection-l3d-git-gitea-tasks" class="step" data-x="3000" data-y="4000" data-rotate="90" data-scale="2">
+<a>l3d.git.gitea</a>
+<svg viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+  </style>
+  <text x="0" y="10">
+    <tspan x="50" dy="0">…</tspan>
+    <tspan x="50" dy="1.2em"   fill="red">└── tasks</tspan>
+    <tspan x="70" dy="1.2em">├── backup.yml</tspan>
+    <tspan x="70" dy="1.2em">├── configure.yml</tspan>
+    <tspan x="70" dy="1.2em">├── create_user.yml</tspan>
+    <tspan x="70" dy="1.2em">├── customize_footer.yml</tspan>
+    <tspan x="70" dy="1.2em">├── customize_logo.yml</tspan>
+    <tspan x="70" dy="1.2em">├── customize_public_files.yml</tspan>
+    <tspan x="70" dy="1.2em">├── directory.yml</tspan>
+    <tspan x="70" dy="1.2em">├── fail2ban.yml</tspan>
+    <tspan x="70" dy="1.2em">├── gitea_secrets.yml</tspan>
+    <tspan x="70" dy="1.2em">├── install_forgejo.yml</tspan>
+    <tspan x="70" dy="1.2em">├── install_gitea.yml</tspan>
+    <tspan x="70" dy="1.2em">├── install_systemd.yml</tspan>
+    <tspan x="70" dy="1.2em">├── jwt_secrets.yml</tspan>
+    <tspan x="70" dy="1.2em">├── local_git_users.yml</tspan>
+    <tspan x="70" dy="1.2em"   fill="red">├── main.yml</tspan>
+    <tspan x="70" dy="1.2em">├── set_forgejo_version.yml</tspan>
+    <tspan x="70" dy="1.2em">├── set_gitea_version.yml</tspan>
+    <tspan x="70" dy="1.2em">└── versioncheck.yml</tspan>
+  </text>
+</svg>
+
+
+
+</div>
+#### slides ####
+content:
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-z="0" data-scale="12">
+    </div>
+#### slides ####
+content:
+
+<div id="collection-l3d-git-gitea-tasks-main" class="step" data-x="3000" data-y="6000" data-rotate="90" data-scale="1">
+<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+    .comment {
+      fill: #6a737d; /* grey for comments */
+    }
+    .keyword {
+      fill: #d73a49; /* red for keywords */
+    }
+    .value {
+      fill: #005cc5; /* blue for values */
+    }
+    .operator {
+      fill: orange; /* orange for operators */
+    }
+  </style>
+  <text x="0" y="10" class="comment">
+    <tspan  x="0" dy="0">   1   │ ---</tspan>
+    <tspan x="0" dy="1.2em">   2   │</tspan>
+    <tspan x="0" dy="1.2em">   3   │</tspan>
+    <tspan x="0" dy="1.2em">   4   │</tspan>
+    <tspan x="0" dy="1.2em">   5   │</tspan>
+    <tspan x="0" dy="1.2em">   6   │</tspan>
+    <tspan x="0" dy="1.2em">   7   │</tspan>
+    <tspan x="0" dy="1.2em">   8   │</tspan>
+    <tspan x="0" dy="1.2em">   9   │</tspan>
+  </text>
+  <text x="50" y="26">
+    <tspan x="32" dy="0">-</tspan>
+    <tspan x="72" dy="0">:</tspan>
+    <tspan x="266" dy="1.2em">:</tspan>
+    <tspan x="84" dy="1.2em">:</tspan>
+  </text>
+  <text x="50" y="26" class="keyword">
+    <tspan x="42" dy="0">name</tspan>
+     <tspan x="42" dy="1.2em">ansible.builtin.include_tasks</tspan>
+     <tspan x="54" dy="1.2em">file</tspan>
+  </text>
+  <text class="operator" x="85" y="26">
+     <tspan x="85" y="26">Perform optional versionscheck</tspan>
+      <tspan x="95" dy="2.4em" >"versioncheck.yml"</tspan>
+  </text>
+</svg>
+
 
 </div>
