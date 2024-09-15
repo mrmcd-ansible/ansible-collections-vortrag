@@ -307,7 +307,60 @@ Dies ermöglicht es, Ansible Module, Filter, Plugins und Rollen in seine Projekt
 
 
 <div id="collection-l3d-git-gitea-tasks-main2" class="step" data-x="3500" data-y="7000" data-rotate="90" data-scale="1">
-
+<svg viewBox="0 0 535 160" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+    .comment {
+      fill: #6a737d; /* grey for comments */
+    }
+    .keyword {
+      fill: darkred; /* red for keywords */
+    }
+    .value {
+      fill: #005cc5; /* blue for values */
+    }
+    .operator {
+      fill: darkorange; /* orange for operators */
+    }
+  </style>
+  <text x="0" y="10" class="comment">
+    <tspan x="4" dy="0">10</tspan><tspan      x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">12</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">13</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">14</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">15</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">16</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">17</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">18</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">19</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">20</tspan><tspan x="24" dy="0">│</tspan>
+  </text>
+  <text x="50" y="10">
+    <tspan x="42" dy="1.2em">-</tspan>
+    <tspan x="53" class="keyword" dy="0">name</tspan>
+    <tspan x="83" dy="0">:</tspan>
+    <tspan x="95" class="operator" dy="0">Prepare gitea/forgejo variable import</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">block</tspan>
+    <tspan x="91" dy="0">:</tspan>
+    <tspan x="67" dy="1.2em">-</tspan>
+    <tspan x="79" class="keyword" dy="0">name</tspan>
+    <tspan x="109" dy="0">:</tspan>
+    <tspan x="120" class="operator" dy="0">Gather variables for gitea or forgejo</tspan>
+    <tspan x="79" class="keyword" dy="1.2em">ansible.builtin.include_vars</tspan>
+    <tspan x="295" dy="0">:</tspan>
+    <tspan x="94" class="keyword" dy="1.2em">file</tspan>
+    <tspan x="124" dy="0">:</tspan>
+    <tspan x="135" class="operator" dy="0">"{{ lookup('first_found', gitea_fork_variables) }}"</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">rescue</tspan>
+    <tspan x="98" dy="0">:</tspan>
+    <tspan x="67" dy="1.2em">-</tspan>
+    <tspan x="79" class="keyword" dy="0">name</tspan>
+    <tspan x="109" dy="0">:</tspan>
+    <tspan x="120" class="operator" dy="0">Gitea/Forejo import info</tspan>
+  </text>
+</svg>
 </div>
 
 
