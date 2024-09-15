@@ -116,7 +116,6 @@ content:
     <tspan x="80" dy="1.2em">    └──…</tspan>
   </text>
 </svg>
-
 </div>
 #### slides ####
 content:
@@ -146,7 +145,6 @@ content:
     <tspan x="20" dy="2em">homepage: https://ansible.l3d.space/#l3d.git</tspan>
   </text>
 </svg>
-
 </div>
 #### slides ####
 content:
@@ -177,7 +175,6 @@ content:
     <tspan x="80" dy="1.2em">    └──…</tspan>
   </text>
 </svg>
-
 </div>
 #### slides ####
 content:
@@ -223,9 +220,6 @@ content:
     <tspan x="50" dy="1.2em">    └── suse.yml</tspan>
   </text>
 </svg>
-
-
-
 </div>
 #### slides ####
 content:
@@ -261,20 +255,12 @@ content:
     <tspan x="70" dy="1.2em">└── versioncheck.yml</tspan>
   </text>
 </svg>
-
-
-
 </div>
 #### slides ####
 content:
 
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-z="0" data-scale="12">
-    </div>
-#### slides ####
-content:
-
-<div id="collection-l3d-git-gitea-tasks-main" class="step" data-x="3000" data-y="6000" data-rotate="90" data-scale="1">
-<svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+<div id="collection-l3d-git-gitea-tasks-main1" class="step" data-x="4000" data-y="7000" data-rotate="90" data-scale="1">
+<svg viewBox="0 0 450 160" xmlns="http://www.w3.org/2000/svg">
   <style>
     text {
       font: 13px monospace;
@@ -283,42 +269,116 @@ content:
       fill: #6a737d; /* grey for comments */
     }
     .keyword {
-      fill: #d73a49; /* red for keywords */
+      fill: darkred; /* red for keywords */
     }
     .value {
       fill: #005cc5; /* blue for values */
     }
     .operator {
-      fill: orange; /* orange for operators */
+      fill: darkorange; /* orange for operators */
     }
   </style>
   <text x="0" y="10" class="comment">
-    <tspan  x="0" dy="0">   1   │ ---</tspan>
-    <tspan x="0" dy="1.2em">   2   │</tspan>
-    <tspan x="0" dy="1.2em">   3   │</tspan>
-    <tspan x="0" dy="1.2em">   4   │</tspan>
-    <tspan x="0" dy="1.2em">   5   │</tspan>
-    <tspan x="0" dy="1.2em">   6   │</tspan>
-    <tspan x="0" dy="1.2em">   7   │</tspan>
-    <tspan x="0" dy="1.2em">   8   │</tspan>
-    <tspan x="0" dy="1.2em">   9   │</tspan>
+    <tspan x="4" dy="0">1</tspan><tspan      x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">2</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">3</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">4</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">5</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">6</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">7</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">8</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">9</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">10</tspan><tspan x="24" dy="0">│</tspan>
   </text>
-  <text x="50" y="26">
-    <tspan x="32" dy="0">-</tspan>
-    <tspan x="72" dy="0">:</tspan>
-    <tspan x="266" dy="1.2em">:</tspan>
-    <tspan x="84" dy="1.2em">:</tspan>
-  </text>
-  <text x="50" y="26" class="keyword">
-    <tspan x="42" dy="0">name</tspan>
-     <tspan x="42" dy="1.2em">ansible.builtin.include_tasks</tspan>
-     <tspan x="54" dy="1.2em">file</tspan>
-  </text>
-  <text class="operator" x="85" y="26">
-     <tspan x="85" y="26">Perform optional versionscheck</tspan>
-      <tspan x="95" dy="2.4em" >"versioncheck.yml"</tspan>
+  <text x="50" y="10">
+    <tspan x="42" class="comment" dy="0">---</tspan>
+    <tspan x="42" dy="1.2em">-</tspan>
+    <tspan x="53" class="keyword" dy="0">name</tspan>
+    <tspan x="83" dy="0">:</tspan>
+    <tspan x="95" class="operator" dy="0">Perform optional versionscheck</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">ansible.builtin.include_tasks</tspan>
+    <tspan x="277" dy="0">:</tspan>
+    <tspan x="70" class="keyword" dy="1.2em">file</tspan>
+    <tspan x="100" dy="0">:</tspan>
+    <tspan x="110" class="operator" dy="0">"versioncheck.yml"</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">when</tspan>
+    <tspan x="83" dy="0">:</tspan>
+    <tspan x="94" class="operator" dy="0">submodules_versioncheck</tspan>
+    <tspan x="275" dy="0">|</tspan>
+    <tspan x="285" class="operator" dy="0">bool</tspan>
+    <tspan x="42" dy="2.4em">-</tspan>
+    <tspan x="53" class="keyword" dy="0">name</tspan>
+    <tspan x="83" dy="0">:</tspan>
+    <tspan x="95" class="operator" dy="0">Gather installed packages for checks later on</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">ansible.builtin.package_facts</tspan>
+    <tspan x="277" dy="0">:</tspan>
+    <tspan x="70" class="keyword" dy="1.2em">manager</tspan>
+    <tspan x="124" dy="0">:</tspan>
+    <tspan x="136" class="operator" dy="0">auto</tspan>
   </text>
 </svg>
-
-
 </div>
+#### slides ####
+content:
+
+<div id="collection-l3d-git-gitea-tasks-main2" class="step" data-x="3500" data-y="7000" data-rotate="90" data-scale="1">
+<svg viewBox="0 0 535 160" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+    }
+    .comment {
+      fill: #6a737d; /* grey for comments */
+    }
+    .keyword {
+      fill: darkred; /* red for keywords */
+    }
+    .value {
+      fill: #005cc5; /* blue for values */
+    }
+    .operator {
+      fill: darkorange; /* orange for operators */
+    }
+  </style>
+  <text x="0" y="10" class="comment">
+    <tspan x="4" dy="0">10</tspan><tspan      x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">12</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">13</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">14</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">15</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">16</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">17</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">18</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">19</tspan><tspan  x="24" dy="0">│</tspan>
+    <tspan x="4" dy="1.2em">20</tspan><tspan x="24" dy="0">│</tspan>
+  </text>
+  <text x="50" y="10">
+    <tspan x="42" dy="1.2em">-</tspan>
+    <tspan x="53" class="keyword" dy="0">name</tspan>
+    <tspan x="83" dy="0">:</tspan>
+    <tspan x="95" class="operator" dy="0">Prepare gitea/forgejo variable import</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">block</tspan>
+    <tspan x="91" dy="0">:</tspan>
+    <tspan x="67" dy="1.2em">-</tspan>
+    <tspan x="79" class="keyword" dy="0">name</tspan>
+    <tspan x="109" dy="0">:</tspan>
+    <tspan x="120" class="operator" dy="0">Gather variables for gitea or forgejo</tspan>
+    <tspan x="79" class="keyword" dy="1.2em">ansible.builtin.include_vars</tspan>
+    <tspan x="295" dy="0">:</tspan>
+    <tspan x="94" class="keyword" dy="1.2em">file</tspan>
+    <tspan x="124" dy="0">:</tspan>
+    <tspan x="135" class="operator" dy="0">"{{ lookup('first_found', gitea_fork_variables) }}"</tspan>
+    <tspan x="53" class="keyword" dy="1.2em">rescue</tspan>
+    <tspan x="98" dy="0">:</tspan>
+    <tspan x="67" dy="1.2em">-</tspan>
+    <tspan x="79" class="keyword" dy="0">name</tspan>
+    <tspan x="109" dy="0">:</tspan>
+    <tspan x="120" class="operator" dy="0">Gitea/Forejo import info</tspan>
+  </text>
+</svg>
+</div>
+#### slides ####
+content:
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-z="0" data-scale="12">
+    </div>
