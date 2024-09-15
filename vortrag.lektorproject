@@ -2,4 +2,4 @@
 name = MRMCD Vortrag
 
 [servers.ghpages]
-target = ghpages://mrmcd-ansible/ansible-collections-vortrag
+target = ghpages+https://mrmcd-ansible/ansible-collections-vortrag
