@@ -256,3 +256,47 @@ gitea_themes: "gitea-auto,gitea-light,gitea-dark"
     gitea_secret_key: "{{ remote_secret_key['content'] | b64decode }}"
   when: gitea_secret_key | string | length == 0
 ```
+
+---
+
+Configure Gitea
+``tasks/configure.yml``
+```yml=10
+- name: "Configure gitea"
+  become: true
+  ansible.builtin.template:
+    src: 'templates/gitea.ini.j2'
+    dest: "{{ gitea_conf }}/gitea.ini"
+    owner: "{{ gitea_user }}"
+    group: "{{ gitea_group }}"
+    mode: '0640'
+  notify: "systemctl restart gitea"
+```
+
+----
+
+``handlers/main.yml``
+```yml=
+---                                                    
+- name: "Restart gitea"
+  become: true
+  listen: "systemctl restart gitea"
+  ansible.builtin.service:
+    name: gitea
+    state: restarted
+  when: ansible_service_mgr == "systemd"
+```
+
+---
+
+### Warum sind Collections besser als Rollen?
+* einfacher zu teilen
+* schöner zu updaten
+* besser integrtion in Ansible Galaxy
+* mehr untergliederungsmöglichkeiten
+
+---
+
+## Vielen Dank für euere Aufmerksamkeit
+Habt ihr noch Fragen?
+<img width="256px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/41128c4c-029d-49d6-b821-bc8ef1b3dce0.svg" />
