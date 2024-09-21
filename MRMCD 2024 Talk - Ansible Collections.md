@@ -7,7 +7,16 @@ slideOptions:
   transition: slide
 ---
 
-<img width="320x" style="border: none; background: rgba(0,0,0,0)" src="https://md.entropia.de/uploads/41128c4c-029d-49d6-b821-bc8ef1b3dce0.svg" />
+<style>
+  pre code {
+    width: 100%;
+  }
+  .reveal pre {
+    width: 100%;
+  }
+</style>
+
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/41128c4c-029d-49d6-b821-bc8ef1b3dce0.svg" />
 
 
 ---
@@ -47,10 +56,43 @@ und wie Sie aufgebaut ist.
 Aufbau der Collection: 
 
 
-<img width="420x" style="border: none; background: rgba(0,0,0,0); fill: white;" src="https://md.entropia.de/uploads/d3708399-b617-4405-9d6a-d4abe9fbd1b8.svg" />
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/d3708399-b617-4405-9d6a-d4abe9fbd1b8.svg" />
+
+----
+
+Ansible Collection Metadaten *(``galaxy.yml``)*
+
+```yml
+namespace: l3d 
+version: 1.1.6 
+readme: README.md 
+authors:
+  - L3D <l3d@c3woc.de> 
+license:
+  - MIT 
+tags:
+  - gitea
+  - linux 
+dependencies: 
+  "community.general": ">=9.4.0"
+repository: https://github.com/roles-ansible/ansible_coll... 
+homepage: https://ansible.l3d.space/#l3d.git
+```
+
+
+---
+
+Ansible Rolle **l3d.git.gitea**
+
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/b1822541-e76b-485f-b1a7-bd43c913e577.svg" />
+
 
 
 ----
+
+**``l3d.git.gitea``**
+
+``tasks/main.yml``
 
 ```yml=1
 ---
@@ -64,3 +106,32 @@ Aufbau der Collection:
     manager: "auto"
     
 ```
+
+
+----
+
+
+
+```yml=
+- name: Gather Gitea/Forgejo UI Theme variables
+  ansible.builtin.include_vars:
+    file: "{{ lookup('ansible.builtin.first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ gitea_fork }}.yml"
+      paths:
+        - "defaults"
+```
+
+----
+
+``` yml=40
+- name: Backup gitea before update
+  ansible.builtin.include_tasks:
+    file: "backup.yml"
+  when: gitea_backup_on_upgrade|bool
+```
+
+----
+
