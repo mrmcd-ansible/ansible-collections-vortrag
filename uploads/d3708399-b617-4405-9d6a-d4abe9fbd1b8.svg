@@ -1,0 +1,25 @@
+<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font: 13px monospace;
+      fill: white;
+    }
+  </style>
+  <text x="0" y="10">
+    <tspan x="50" dy="0">.</tspan>
+    <tspan x="50" dy="1.21em">├── changelog</tspan>
+    <tspan x="50" dy="1.21em">├── CHANGELOG.md</tspan>
+    <tspan x="50" dy="1.21em">├── CHANGELOG.rst</tspan>
+    <tspan x="50" dy="1.21em" fill="red">├── galaxy.yml</tspan>
+    <tspan x="50" dy="1.21em">├── LICENSE</tspan>
+    <tspan x="50" dy="1.21em">├── meta</tspan>
+    <tspan x="50" dy="1.21em">│   └── runtime.yml</tspan>
+    <tspan x="50" dy="1.21em">├── README.md</tspan>
+    <tspan x="50" dy="1.21em">├── requirements.txt</tspan>
+    <tspan x="50" dy="1.21em">└── roles</tspan>
+    <tspan x="82" dy="1.21em">├── forgeo_runner</tspan>
+    <tspan x="82" dy="1.21em">│   └── …</tspan>
+    <tspan x="82" dy="1.21em">└── gitea</tspan>
+    <tspan x="114" dy="1.21em">└──…</tspan>
+  </text>
+</svg>

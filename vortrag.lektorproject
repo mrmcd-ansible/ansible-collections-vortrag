@@ -1,5 +1,0 @@
-[project]
-name = MRMCD Vortrag
-
-[servers.ghpages]
-target = ghpages+https://mrmcd-ansible/ansible-collections-vortrag
