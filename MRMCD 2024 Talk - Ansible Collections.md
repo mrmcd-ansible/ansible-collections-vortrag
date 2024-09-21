@@ -5,6 +5,7 @@ controls: true
 title: MRMCD 2024 Talk - Ansible Collections
 slideOptions:
   transition: slide
+  slideNumber: false
 ---
 
 <style>
@@ -12,7 +13,8 @@ slideOptions:
     width: 100%;
   }
   .reveal pre {
-    width: 100%;
+    width: 115%;
+    margin-left: -50px;
   }
 </style>
 
@@ -107,10 +109,35 @@ Ansible Rolle **l3d.git.gitea**
     
 ```
 
+----
+
+``tasks/main.yml``
+
+```yml=11
+- name: Prepare gitea/forgejo variable import
+  block:
+    - name: Gather vars for gitea or forgejo
+      ansible.builtin.include_vars:
+        file: "{{ lookup('ansible.builtin.first_found',
+                 gitea_fork_variables) }}"
+  rescue:
+    - name: Gitea/Forgejo import info
+      ansible.builtin.fail:
+        msg: "Only {{ gitea_supported_forks }} are supported."
+```
+
+``vars/main.yml``
+```yaml=13
+gitea_fork_variables:
+  files:
+    - "fork_{{ gitea_fork | lower }}.yml"
+  paths:
+    - 'vars'
+```
 
 ----
 
-
+``tasks/main.yml``
 
 ```yml=
 - name: Gather Gitea/Forgejo UI Theme variables
@@ -124,14 +151,108 @@ Ansible Rolle **l3d.git.gitea**
         - "defaults"
 ```
 
-----
+``defaults/gitea.yml``
+```yml= 
+---
+gitea_theme_default: "gitea-auto"
+gitea_themes: "gitea-auto,gitea-light,gitea-dark"
+```
 
-``` yml=40
-- name: Backup gitea before update
-  ansible.builtin.include_tasks:
-    file: "backup.yml"
-  when: gitea_backup_on_upgrade|bool
+---
+
+**Version Ermitteln**
+
+``tasks/set_gitea_version.yml``
+```yml=
+---
+- name: "Check gitea installed version"
+  ansible.builtin.shell: |
+    set -eo pipefail
+    {{ gitea_full_executable_path }} -v | cut -d' ' -f 3
+  args:
+    executable: /bin/bash
+  register: gitea_active_version
+  changed_when: false
+  failed_when: false
 ```
 
 ----
 
+``tasks/set_gitea_version.yml``
+```yml=13
+- name: "Get latest gitea release metadata"
+  ansible.builtin.uri:
+    url: https://api.github.com/repos/go-gitea/gitea/releases/latest
+    return_content: true
+  register: gitea_remote_metadata
+  become: false
+  when: not ansible_check_mode
+```
+```yml=27
+- name: "Set fact latest gitea release"
+  ansible.builtin.set_fact:
+    gitea_remote_version: "{{ gitea_remote_metadata.json.tag_name[1:] }}"
+   when: not ansible_check_mode
+```
+
+----
+
+``tasks/set_gitea_version.yml``
+```yml=35
+- name: "Set gitea version target (latest)"
+  ansible.builtin.set_fact:
+    gitea_version_target: "{{ gitea_remote_version }}"
+  when: not ansible_check_mode
+```
+```yml=40
+- name: "Set gitea version target {{ gitea_version }}"
+  ansible.builtin.set_fact:
+    gitea_version_target: "{{ gitea_version }}"
+  when: gitea_version != "latest"
+```
+
+----
+
+``tasks/set_gitea_version.yml``
+```yml=45
+- name: 'Assert that remote version is higher'
+  ansible.builtin.assert:
+    that:
+      - gitea_active_version is version(gitea_remote_version, 'lt')
+    fail_msg: ERROR - Remote version is lower then current version!
+  when: gitea_version == "latest" and gitea_active_version.stderr == ""
+```
+
+---
+
+**Create Secrets**
+``tasks/gitea_secrets.yml``
+```yml=1
+---
+- name: Generate gitea SECRET_KEY if not provided
+  become: true
+  ansible.builtin.shell: |
+    umask 077
+    gitea generate secret SECRET_KEY > {{ gitea_conf }}/gitea_secret_key
+  args:
+    creates: '{{ gitea_conf }}/gitea_secret_key'
+  when: gitea_secret_key | string | length == 0
+```
+
+----
+
+``tasks/gitea_secrets.yml``
+```yml=9
+- name: Read gitea SECRET_KEY from file
+  become: true
+  ansible.builtin.slurp:
+    src: '{{ gitea_conf }}/gitea_secret_key'
+  register: remote_secret_key
+  when: gitea_secret_key | string | length == 0
+```
+```yml=16
+  - name: Set fact gitea_secret_key
+  ansible.builtin.set_fact:
+    gitea_secret_key: "{{ remote_secret_key['content'] | b64decode }}"
+  when: gitea_secret_key | string | length == 0
+```
