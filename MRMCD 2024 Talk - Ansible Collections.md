@@ -295,6 +295,35 @@ Configure Gitea
 * besser integrtion in Ansible Galaxy
 * mehr untergliederungsmöglichkeiten
 
+---
+
+#### Ansible Playbook
+
+
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="<Hier sollte ein tree für die Ansible playbook https://github.com/mrmcd-ansible/ansible_playbook_git sein" />
+
+*(Quelle: https://github.com/mrmcd-ansible/ansible_playbook_git.git)*
+
+----
+
+``ansible_playbook_git/requirements.txt``
+
+```yml=
+ansible-core>=2.17.1
+ansible>=10.1.0
+ansible-lint>=24.6.1
+yamllint>=1.35.1
+j2lint>=1.1.0
+jmespath>=1.0.1
+```
+``ansible_playbook_git/requirements.yml``
+```yml=
+---
+collections:
+  - name: l3d.git
+    version: ">=1.1.6"
+```
+
 ----
 
 ##### Ansible Rolle Updaten:
