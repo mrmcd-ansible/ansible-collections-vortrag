@@ -192,7 +192,7 @@ gitea_themes: "gitea-auto,gitea-light,gitea-dark"
 - name: "Set fact latest gitea release"
   ansible.builtin.set_fact:
     gitea_remote_version: "{{ gitea_remote_metadata.json.tag_name[1:] }}"
-   when: not ansible_check_mode
+  when: not ansible_check_mode
 ```
 
 ----
@@ -281,7 +281,7 @@ Configure Gitea
 - name: "Restart gitea"
   become: true
   listen: "systemctl restart gitea"
-  ansible.builtin.service:
+  ansible.builtin.systemd_service:
     name: gitea
     state: restarted
   when: ansible_service_mgr == "systemd"
@@ -294,6 +294,16 @@ Configure Gitea
 * schöner zu updaten
 * besser integrtion in Ansible Galaxy
 * mehr untergliederungsmöglichkeiten
+
+----
+
+##### Ansible Rolle Updaten:
+
+<pre><code class="sh hljs">ansible-galaxy <span class="hljs-keyword">role</span> <span class="hljs-title">install</span> -r requirements.yml <span style="color: red">--force</span>
+</code></pre>
+##### Ansible Collection Updaten:
+<pre><code class="sh hljs">ansible-galaxy <span class="hljs-keyword">collection</span> <span class="hljs-title">install</span> -r requirements.yml <span style="color: lawngreen">--upgrade</span>
+</code></pre>
 
 ---
 
