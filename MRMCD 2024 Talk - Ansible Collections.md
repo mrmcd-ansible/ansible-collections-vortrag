@@ -66,7 +66,7 @@ Ansible Collection Metadaten *(``galaxy.yml``)*
 
 ```yml
 namespace: l3d 
-version: 1.1.6 
+version: 1.1.7
 readme: README.md 
 authors:
   - L3D <l3d@c3woc.de> 
@@ -321,7 +321,7 @@ jmespath>=1.0.1
 ---
 collections:
   - name: l3d.git
-    version: ">=1.1.6"
+    version: ">=1.1.7"
 ```
 
 ----
