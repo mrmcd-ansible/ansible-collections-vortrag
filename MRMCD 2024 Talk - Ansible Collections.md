@@ -18,7 +18,7 @@ slideOptions:
   }
 </style>
 
-<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/41128c4c-029d-49d6-b821-bc8ef1b3dce0.svg" />
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="/uploads/41128c4c-029d-49d6-b821-bc8ef1b3dce0.svg" />
 
 
 ---
@@ -58,7 +58,7 @@ und wie Sie aufgebaut ist.
 Aufbau der Collection: 
 
 
-<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/d3708399-b617-4405-9d6a-d4abe9fbd1b8.svg" />
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="/uploads/d3708399-b617-4405-9d6a-d4abe9fbd1b8.svg" />
 
 ----
 
@@ -86,7 +86,7 @@ homepage: https://ansible.l3d.space/#l3d.git
 
 Ansible Rolle **l3d.git.gitea**
 
-<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="https://md.entropia.de/uploads/b1822541-e76b-485f-b1a7-bd43c913e577.svg" />
+<img width="512px" style="border: none; background: rgba(0,0,0,0); box-shadow: none;" src="/uploads/b1822541-e76b-485f-b1a7-bd43c913e577.svg" />
 
 
 
@@ -306,32 +306,33 @@ Configure Gitea
 
 ----
 
-``ansible_playbook_git/requirements.txt``
+**Ansible Collections requirements.yml**
 
-```yml=
-ansible-core>=2.17.1
-ansible>=10.1.0
-ansible-lint>=24.6.1
-yamllint>=1.35.1
-j2lint>=1.1.0
-jmespath>=1.0.1
-```
 ``ansible_playbook_git/requirements.yml``
 ```yml=
 ---
 collections:
   - name: l3d.git
     version: ">=1.1.7"
+
+roles:
+  - name: roles-ansible.gitea
+    version: 'v3.5.3'
 ```
 
 ----
 
-##### Ansible Rolle Updaten:
+### Ansible Collection Updaten:
+<pre><code class="sh hljs">ansible-galaxy <span class="hljs-keyword">collection</span> <span class="hljs-title">install</span> -r requirements.yml <span style="color: lawngreen">--upgrade</span>
+</code></pre>
+
+### Ansible Rolle Updaten:
 
 <pre><code class="sh hljs">ansible-galaxy <span class="hljs-keyword">role</span> <span class="hljs-title">install</span> -r requirements.yml <span style="color: red">--force</span>
 </code></pre>
-##### Ansible Collection Updaten:
-<pre><code class="sh hljs">ansible-galaxy <span class="hljs-keyword">collection</span> <span class="hljs-title">install</span> -r requirements.yml <span style="color: lawngreen">--upgrade</span>
+
+**Nicht vergessen die von der Rolle genutzte Collections rausfinden und updaten:**
+<pre><code class="sh hljs">ansible-galaxy <span class="hljs-keyword">collection</span> <span class="hljs-title">install</span> community.general <span style="color: lawngreen">--upgrade</span>
 </code></pre>
 
 ---
